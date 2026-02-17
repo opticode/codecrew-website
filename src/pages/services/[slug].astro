@@ -17,7 +17,7 @@ const { service } = Astro.props;
 <BaseLayout title={`${service.title} — CodeCrew Software`} description={service.description}>
   <section class="py-20 md:py-32 px-4">
     <div class="max-w-3xl mx-auto">
-      <a href="/#services" class="inline-flex items-center gap-2 text-primary text-sm mb-12 hover:opacity-80 transition-opacity" style="font-family: var(--font-heading); letter-spacing: 0.05em;">
+      <a href="/#services" class="inline-flex items-center gap-2 text-primary text-sm mb-12 hover:opacity-80 transition-opacity font-heading tracking-wide">
         <Icon name="lucide:arrow-left" class="w-4 h-4" />
         Back to Services
       </a>
@@ -27,7 +27,7 @@ const { service } = Astro.props;
           <Icon name={service.icon} class="w-7 h-7" />
         </div>
         <div>
-          <h1 class="text-2xl md:text-3xl mb-2" style="font-family: var(--font-heading);">
+          <h1 class="text-2xl md:text-3xl mb-2 font-heading">
             {service.title}
           </h1>
           {service.badge && <Badge text={service.badge} />}
@@ -41,7 +41,7 @@ const { service } = Astro.props;
       </div>
 
       <div class="mt-16 pt-8 border-t border-white/10">
-        <p class="text-text-muted mb-6" style="font-family: var(--font-heading); font-size: 0.95rem;">
+        <p class="text-text-muted mb-6 font-heading text-[0.95rem]">
           Interested in this service?
         </p>
         <a href="/#contact" class="btn-primary">

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-/* ===== Color Palette (CSS Custom Properties) ===== */
+/* ===== Design Tokens ===== */
 @theme {
-  --color-base: #0a0a0f;
+  --color-backdrop: #0a0a0f;
   --color-surface: #12121a;
   --color-surface-light: #1a1a28;
   --color-primary: #00e5ff;
@@ -24,9 +24,9 @@
   }
 
   body {
-    font-family: var(--font-body);
-    background-color: var(--color-base);
-    color: var(--color-text);
+    font-family: theme(--font-body);
+    background-color: theme(--color-backdrop);
+    color: theme(--color-text);
     line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -34,8 +34,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-    color: var(--color-text-heading);
+    font-family: theme(--font-heading);
+    color: theme(--color-text-heading);
     line-height: 1.2;
   }
 }
@@ -192,19 +192,19 @@
     gap: 0.5rem;
     padding: 0.875rem 2rem;
     background: rgba(0, 229, 255, 0.12);
-    color: var(--color-primary);
-    font-family: var(--font-heading);
+    color: theme(--color-primary);
+    font-family: theme(--font-heading);
     font-size: 0.8rem;
     letter-spacing: 0.05em;
     border-radius: 0.5rem;
-    border: 1px solid var(--color-primary);
+    border: 1px solid theme(--color-primary);
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 500;
   }
   .btn-primary:hover {
-    background: var(--color-primary);
-    color: var(--color-base);
+    background: theme(--color-primary);
+    color: theme(--color-backdrop);
     box-shadow: 0 0 24px rgba(0, 229, 255, 0.4);
     transform: translateY(-2px);
   }
@@ -218,8 +218,8 @@
     gap: 0.5rem;
     padding: 0.875rem 2rem;
     background: transparent;
-    color: var(--color-primary);
-    font-family: var(--font-heading);
+    color: theme(--color-primary);
+    font-family: theme(--font-heading);
     font-size: 0.8rem;
     letter-spacing: 0.05em;
     border: 1px solid rgba(0, 229, 255, 0.4);
@@ -230,7 +230,7 @@
   }
   .btn-secondary:hover {
     background: rgba(0, 229, 255, 0.1);
-    border-color: var(--color-primary);
+    border-color: theme(--color-primary);
     box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
     transform: translateY(-2px);
   }
@@ -242,8 +242,8 @@
   .nav-link {
     position: relative;
     text-decoration: none;
-    color: var(--color-text);
-    font-family: var(--font-heading);
+    color: theme(--color-text);
+    font-family: theme(--font-heading);
     font-size: 0.875rem;
     letter-spacing: 0.08em;
     transition: color 0.3s ease;
@@ -255,11 +255,11 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--color-primary);
+    background: theme(--color-primary);
     transition: width 0.3s ease;
   }
   .nav-link:hover {
-    color: var(--color-primary);
+    color: theme(--color-primary);
   }
   .nav-link:hover::after {
     width: 100%;
@@ -273,7 +273,7 @@
 
   .section-subheading {
     font-size: clamp(1rem, 2vw, 1.15rem);
-    color: var(--color-text-muted);
+    color: theme(--color-text-muted);
     max-width: 36rem;
     margin-inline: auto;
   }
@@ -298,7 +298,7 @@
     margin-bottom: 1.25rem;
   }
   .prose a {
-    color: var(--color-primary);
+    color: theme(--color-primary);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
@@ -319,22 +319,22 @@
     font-size: 0.9em;
   }
   .prose pre {
-    background: var(--color-surface);
+    background: theme(--color-surface);
     padding: 1.25rem;
     border-radius: 0.5rem;
     overflow-x: auto;
     margin-bottom: 1.5rem;
-    border: 1px solid var(--color-border);
+    border: 1px solid theme(--color-border);
   }
   .prose pre code {
     background: none;
     padding: 0;
   }
   .prose blockquote {
-    border-left: 3px solid var(--color-primary);
+    border-left: 3px solid theme(--color-primary);
     padding-left: 1rem;
     margin-left: 0;
-    color: var(--color-text-muted);
+    color: theme(--color-text-muted);
     font-style: italic;
   }
   .prose img {

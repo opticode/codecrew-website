@@ -79,7 +79,7 @@ export const edge = [
       "AI is the engine. Experience is the steering wheel. Every line of code is guided by three decades of software architecture across virtually every language, platform, and paradigm. We've seen what works, what fails, and what lasts.",
   },
   {
-    icon: 'lucide:leaf',
+    icon: 'mdi:leaf-maple',
     title: 'Built in Canada, For Canada',
     description:
       'Headquartered in British Columbia. Our flagship product is purpose-built for Canadian tax law, RRSP/TFSA rules, and provincial regulations across all 13 jurisdictions. We understand the Canadian landscape because we live it.',

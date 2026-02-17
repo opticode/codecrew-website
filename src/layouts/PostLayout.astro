@@ -25,10 +25,10 @@ const readingTime = Math.max(1, Math.ceil((Astro.slots.has('default') ? 200 : 20
   <article class="pt-32 pb-20 px-4">
     <div class="max-w-3xl mx-auto">
       <header class="mb-12">
-        <a href="/blog" class="text-primary text-sm tracking-wider hover:underline mb-6 inline-block" style="font-family: var(--font-heading);">
+        <a href="/blog" class="text-primary text-sm tracking-wider hover:underline mb-6 inline-block font-heading">
           &larr; Back to Blog
         </a>
-        <h1 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: var(--font-heading);">{title}</h1>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4 font-heading">{title}</h1>
         <div class="flex flex-wrap items-center gap-4 text-sm text-text-muted">
           <time datetime={date.toISOString()}>{formattedDate}</time>
           {tags.length > 0 && (
