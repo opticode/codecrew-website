@@ -3,8 +3,8 @@ export const siteConfig = {
   tagline: 'AI-Powered Development. Human-Driven Excellence.',
   description:
     'We build exceptional software at unprecedented speed — an elite crew of AI agents guided by three decades of engineering mastery.',
-  url: 'https://codecrew.dev',
-  email: 'hello@codecrew.dev',
+  url: 'https://codecrew.ca',
+  email: 'hello@codecrew.ca',
   location: 'Rossland, British Columbia, Canada',
   github: 'https://github.com/codecrew-software',
   linkedin: '#',

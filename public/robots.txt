@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://codecrew.dev/sitemap-index.xml
+Sitemap: https://codecrew.ca/sitemap-index.xml
