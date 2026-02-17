@@ -7,12 +7,13 @@ interface Props {
   description: string;
   icon: string;
   badge?: string | null;
+  slug: string;
 }
 
-const { title, description, icon, badge } = Astro.props;
+const { title, description, icon, badge, slug } = Astro.props;
 ---
 
-<div class="glass-card shimmer-border rounded-xl p-6 md:p-8 flex flex-col h-full">
+<a href={`/services/${slug}`} class="glass-card shimmer-border rounded-xl p-6 md:p-8 flex flex-col h-full no-underline group">
   <div class="flex items-start justify-between mb-4">
     <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
       <Icon name={icon} class="w-6 h-6" />
@@ -25,4 +26,7 @@ const { title, description, icon, badge } = Astro.props;
   <p class="text-text-muted text-base leading-relaxed flex-1">
     {description}
   </p>
-</div>
+  <span class="mt-4 text-primary text-sm font-medium opacity-70 group-hover:opacity-100 transition-opacity" style="font-family: var(--font-heading);">
+    Learn more &rarr;
+  </span>
+</a>
