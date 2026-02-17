@@ -85,7 +85,7 @@ export const edge = [
       'Headquartered in British Columbia. Our flagship product is purpose-built for Canadian tax law, RRSP/TFSA rules, and provincial regulations across all 13 jurisdictions. We understand the Canadian landscape because we live it.',
   },
   {
-    icon: 'lucide:lightbulb',
+    icon: 'lucide:gem',
     title: 'Quality Over Quantity',
     description:
       "We don't ship fast and break things. We ship fast and build things right. AI-augmented development means speed WITHOUT sacrificing code quality, test coverage, or maintainability.",
