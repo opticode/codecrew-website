@@ -1,0 +1,56 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  slug: string;
+  basePath?: string;
+  tags?: string[];
+  type?: string;
+}
+
+const { title, description, date, slug, basePath = '/blog', tags = [], type } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-CA', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+
+const typeColors: Record<string, string> = {
+  feature: 'text-green-400 bg-green-400/10 border-green-400/30',
+  announcement: 'text-[var(--color-primary)] bg-[var(--color-primary)]/10 border-[var(--color-primary)]/30',
+  milestone: 'text-[var(--color-secondary)] bg-[var(--color-secondary)]/10 border-[var(--color-secondary)]/30',
+};
+---
+
+<a href={`${basePath}/${slug}`} class="glass-card shimmer-border rounded-xl p-6 flex flex-col h-full group block">
+  <div class="flex items-center gap-3 mb-3">
+    <time datetime={date.toISOString()} class="text-xs text-[var(--color-text-muted)]">
+      {formattedDate}
+    </time>
+    {type && (
+      <span class={`px-2 py-0.5 rounded-full text-xs border capitalize ${typeColors[type] || typeColors.announcement}`}>
+        {type}
+      </span>
+    )}
+  </div>
+  <h3 class="text-base mb-2 group-hover:text-[var(--color-primary)] transition-colors" style="font-family: var(--font-heading); font-size: clamp(0.9rem, 1.5vw, 1rem);">
+    {title}
+  </h3>
+  <p class="text-sm text-[var(--color-text-muted)] leading-relaxed flex-1 mb-4">
+    {description}
+  </p>
+  {tags.length > 0 && (
+    <div class="flex flex-wrap gap-2 mb-4">
+      {tags.map((tag) => (
+        <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-surface-light)] text-[var(--color-text-muted)]">
+          {tag}
+        </span>
+      ))}
+    </div>
+  )}
+  <span class="text-sm text-[var(--color-primary)] group-hover:underline" style="font-family: var(--font-heading);">
+    Read more &rarr;
+  </span>
+</a>

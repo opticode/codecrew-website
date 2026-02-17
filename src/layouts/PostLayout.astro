@@ -1,0 +1,50 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  tags?: string[];
+  image?: string;
+}
+
+const { title, description, date, tags = [], image } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-CA', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+// Rough reading time from word count
+const readingTime = Math.max(1, Math.ceil((Astro.slots.has('default') ? 200 : 200) / 200));
+---
+
+<BaseLayout title={`${title} — CodeCrew Blog`} description={description} image={image}>
+  <article class="pt-32 pb-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <header class="mb-12">
+        <a href="/blog" class="text-[var(--color-primary)] text-sm font-[var(--font-heading)] tracking-wider hover:underline mb-6 inline-block">
+          &larr; Back to Blog
+        </a>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: var(--font-heading);">{title}</h1>
+        <div class="flex flex-wrap items-center gap-4 text-sm text-[var(--color-text-muted)]">
+          <time datetime={date.toISOString()}>{formattedDate}</time>
+          {tags.length > 0 && (
+            <div class="flex gap-2">
+              {tags.map((tag) => (
+                <span class="px-2 py-0.5 rounded-full text-xs bg-[var(--color-surface-light)] text-[var(--color-primary)] border border-[var(--color-border)]">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </header>
+      <div class="prose">
+        <slot />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

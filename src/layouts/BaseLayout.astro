@@ -1,0 +1,70 @@
+---
+import '@fontsource-variable/syne';
+import '@fontsource-variable/outfit';
+import '../styles/global.css';
+import NavBar from '../components/NavBar.astro';
+import FooterSection from '../components/FooterSection.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = 'CodeCrew Software Inc. — AI-Powered Development',
+  description = 'We build exceptional software at unprecedented speed — an elite crew of AI agents guided by three decades of engineering mastery.',
+  image = '/og-image.png',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'CodeCrew Software Inc.',
+      url: 'https://codecrew.dev',
+      logo: 'https://codecrew.dev/favicon.svg',
+      description: 'AI-powered software development guided by 30+ years of human expertise.',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Rossland',
+        addressRegion: 'BC',
+        addressCountry: 'CA',
+      },
+    })} />
+  </head>
+  <body class="min-h-screen">
+    <NavBar />
+    <main>
+      <slot />
+    </main>
+    <FooterSection />
+  </body>
+</html>

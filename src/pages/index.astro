@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import EdgeSection from '../components/EdgeSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import BlogPreview from '../components/BlogPreview.astro';
+import ContactSection from '../components/ContactSection.astro';
+import SectionDivider from '../components/ui/SectionDivider.astro';
+import ScrollReveal from '../components/interactive/ScrollReveal.vue';
+---
+
+<BaseLayout>
+  <HeroSection />
+
+  <ScrollReveal client:visible>
+    <ServicesSection />
+  </ScrollReveal>
+
+  <SectionDivider />
+
+  <ScrollReveal client:visible>
+    <EdgeSection />
+  </ScrollReveal>
+
+  <SectionDivider flip />
+
+  <ScrollReveal client:visible>
+    <AboutSection />
+  </ScrollReveal>
+
+  <SectionDivider />
+
+  <ScrollReveal client:visible>
+    <BlogPreview />
+  </ScrollReveal>
+
+  <SectionDivider flip />
+
+  <ScrollReveal client:visible>
+    <ContactSection />
+  </ScrollReveal>
+</BaseLayout>

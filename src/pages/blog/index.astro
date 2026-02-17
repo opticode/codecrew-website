@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Blog — CodeCrew Software" description="Thoughts on software development, AI, and building great products.">
+  <section class="pt-32 pb-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h1 class="section-heading">Blog</h1>
+        <p class="section-subheading">
+          Thoughts on software development, AI, and building great products.
+        </p>
+      </div>
+
+      {posts.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map((post) => (
+            <PostCard
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date}
+              slug={post.id}
+              basePath="/blog"
+              tags={post.data.tags}
+            />
+          ))}
+        </div>
+      ) : (
+        <p class="text-center text-[var(--color-text-muted)]">
+          Blog posts coming soon. Stay tuned!
+        </p>
+      )}
+    </div>
+  </section>
+</BaseLayout>

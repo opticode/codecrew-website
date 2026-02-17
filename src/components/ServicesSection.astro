@@ -1,0 +1,26 @@
+---
+import ServiceCard from './ServiceCard.astro';
+import { services } from '../data/content';
+---
+
+<section id="services" class="py-20 md:py-32 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="section-heading">What We Build</h2>
+      <p class="section-subheading">
+        Purpose-built software powered by AI, steered by experience.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {services.map((service) => (
+        <ServiceCard
+          title={service.title}
+          description={service.description}
+          icon={service.icon}
+          badge={service.badge}
+        />
+      ))}
+    </div>
+  </div>
+</section>

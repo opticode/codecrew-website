@@ -1,0 +1,28 @@
+---
+import { Icon } from 'astro-icon/components';
+import Badge from './ui/Badge.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  icon: string;
+  badge?: string | null;
+}
+
+const { title, description, icon, badge } = Astro.props;
+---
+
+<div class="glass-card shimmer-border rounded-xl p-6 md:p-8 flex flex-col h-full">
+  <div class="flex items-start justify-between mb-4">
+    <div class="w-12 h-12 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)]">
+      <Icon name={icon} class="w-6 h-6" />
+    </div>
+    {badge && <Badge text={badge} />}
+  </div>
+  <h3 class="text-lg mb-3" style="font-family: var(--font-heading); font-size: clamp(0.95rem, 1.5vw, 1.1rem);">
+    {title}
+  </h3>
+  <p class="text-[var(--color-text-muted)] text-sm leading-relaxed flex-1">
+    {description}
+  </p>
+</div>

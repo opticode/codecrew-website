@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const updates = (await getCollection('updates'))
+  .filter((update) => !update.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Updates — CodeCrew Software" description="Latest news, features, and milestones from CodeCrew Software.">
+  <section class="pt-32 pb-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h1 class="section-heading">Updates</h1>
+        <p class="section-subheading">
+          Latest news, features, and milestones from CodeCrew.
+        </p>
+      </div>
+
+      {updates.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {updates.map((update) => (
+            <PostCard
+              title={update.data.title}
+              description={update.data.description}
+              date={update.data.date}
+              slug={update.id}
+              basePath="/updates"
+              type={update.data.type}
+            />
+          ))}
+        </div>
+      ) : (
+        <p class="text-center text-[var(--color-text-muted)]">
+          Updates coming soon. Stay tuned!
+        </p>
+      )}
+    </div>
+  </section>
+</BaseLayout>

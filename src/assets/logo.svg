@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 80" fill="none">
+  <!-- Left bracket -->
+  <path d="M6 40 L22 18 M6 40 L22 62" stroke="#00e5ff" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- Diamond dots -->
+  <circle cx="41" cy="28" r="5" fill="#66f0ff"/>
+  <circle cx="29" cy="40" r="5" fill="#66f0ff"/>
+  <circle cx="53" cy="40" r="5" fill="#66f0ff"/>
+  <circle cx="41" cy="52" r="5" fill="#66f0ff"/>
+  <!-- Center dot -->
+  <circle cx="41" cy="40" r="5" fill="#009db3"/>
+  <!-- Right bracket -->
+  <path d="M76 40 L60 18 M76 40 L60 62" stroke="#00e5ff" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg>
