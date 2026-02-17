@@ -112,7 +112,7 @@ async function handleSubmit() {
   submitError.value = '';
 
   try {
-    const res = await fetch('https://formspree.io/f/xpwzgkvl', {
+    const res = await fetch('https://formspree.io/f/xjgernqa', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({
