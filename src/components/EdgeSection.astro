@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components';
 import { edge } from '../data/content';
 ---
 
-<section id="edge" class="py-20 md:py-32 px-4 bg-[var(--color-surface)]">
+<section id="edge" class="py-20 md:py-32 px-4 bg-surface">
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16">
       <h2 class="section-heading">Why CodeCrew?</h2>
@@ -14,15 +14,15 @@ import { edge } from '../data/content';
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
       {edge.map((item, i) => (
-        <div class={`flex gap-5 ${i % 2 === 1 ? 'md:translate-y-8' : ''}`}>
-          <div class="shrink-0 w-12 h-12 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)]">
+        <div class="flex gap-5">
+          <div class="shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
             <Icon name={item.icon} class="w-6 h-6" />
           </div>
           <div>
             <h3 class="text-lg mb-3" style="font-family: var(--font-heading); font-size: clamp(0.95rem, 1.5vw, 1.1rem);">
               {item.title}
             </h3>
-            <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+            <p class="text-text-muted text-base leading-relaxed">
               {item.description}
             </p>
           </div>

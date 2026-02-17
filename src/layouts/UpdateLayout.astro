@@ -18,8 +18,8 @@ const formattedDate = date.toLocaleDateString('en-CA', {
 
 const typeColors: Record<string, string> = {
   feature: 'text-green-400 bg-green-400/10 border-green-400/30',
-  announcement: 'text-[var(--color-primary)] bg-[var(--color-primary)]/10 border-[var(--color-primary)]/30',
-  milestone: 'text-[var(--color-secondary)] bg-[var(--color-secondary)]/10 border-[var(--color-secondary)]/30',
+  announcement: 'text-primary bg-primary/10 border-primary/30',
+  milestone: 'text-secondary bg-secondary/10 border-secondary/30',
 };
 ---
 
@@ -27,7 +27,7 @@ const typeColors: Record<string, string> = {
   <article class="pt-32 pb-20 px-4">
     <div class="max-w-3xl mx-auto">
       <header class="mb-12">
-        <a href="/updates" class="text-[var(--color-primary)] text-sm font-[var(--font-heading)] tracking-wider hover:underline mb-6 inline-block">
+        <a href="/updates" class="text-primary text-sm tracking-wider hover:underline mb-6 inline-block" style="font-family: var(--font-heading);">
           &larr; Back to Updates
         </a>
         <div class="flex items-center gap-3 mb-4">
@@ -36,7 +36,7 @@ const typeColors: Record<string, string> = {
           </span>
         </div>
         <h1 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: var(--font-heading);">{title}</h1>
-        <time datetime={date.toISOString()} class="text-sm text-[var(--color-text-muted)]">{formattedDate}</time>
+        <time datetime={date.toISOString()} class="text-sm text-text-muted">{formattedDate}</time>
       </header>
       <div class="prose">
         <slot />
