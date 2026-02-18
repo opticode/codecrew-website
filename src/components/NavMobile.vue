@@ -4,7 +4,6 @@
       @click="open = !open"
       class="relative z-50 p-2 text-white"
       :aria-label="open ? 'Close menu' : 'Open menu'"
-      aria-expanded="false"
       :aria-expanded="open"
     >
       <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -16,7 +15,7 @@
     <Transition name="menu">
       <div
         v-if="open"
-        class="fixed inset-0 z-40 bg-[#0a0a0f]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8"
+        class="fixed inset-0 z-40 bg-backdrop flex flex-col items-center justify-center gap-8"
       >
         <a
           v-for="link in links"
