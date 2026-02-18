@@ -9,14 +9,20 @@ import { siteConfig } from '../data/content';
   <div class="relative z-10 text-center px-4 max-w-4xl mx-auto stagger-in">
     <!-- Animated Logo -->
     <div class="flex items-center justify-center mb-8">
-      <svg viewBox="0 0 82 80" class="w-20 h-20 md:w-28 md:h-28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 40 L22 18 M6 40 L22 62" stroke="#00e5ff" stroke-width="5" fill="none" stroke-linecap="round" class="logo-bracket-left"/>
-        <circle cx="41" cy="28" r="5" fill="#66f0ff" class="logo-dot"/>
-        <circle cx="29" cy="40" r="5" fill="#66f0ff" class="logo-dot"/>
-        <circle cx="53" cy="40" r="5" fill="#66f0ff" class="logo-dot"/>
-        <circle cx="41" cy="52" r="5" fill="#66f0ff" class="logo-dot"/>
-        <circle cx="41" cy="40" r="5" fill="#009db3" class="logo-dot"/>
-        <path d="M76 40 L60 18 M76 40 L60 62" stroke="#00e5ff" stroke-width="5" fill="none" stroke-linecap="round" class="logo-bracket-right"/>
+      <svg viewBox="0 0 82 80" class="logo-svg w-20 h-20 md:w-28 md:h-28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g class="logo-bracket-left-group">
+          <path d="M6 40 L22 18 M6 40 L22 62" stroke="#00e5ff" stroke-width="5" fill="none" stroke-linecap="round" class="logo-bracket-left"/>
+        </g>
+        <g class="logo-crew">
+          <circle cx="41" cy="28" r="5" fill="#66f0ff" class="logo-dot"/>
+          <circle cx="29" cy="40" r="5" fill="#66f0ff" class="logo-dot"/>
+          <circle cx="53" cy="40" r="5" fill="#66f0ff" class="logo-dot"/>
+          <circle cx="41" cy="52" r="5" fill="#66f0ff" class="logo-dot"/>
+        </g>
+        <circle cx="41" cy="40" r="5" fill="#009db3" class="logo-dot logo-center"/>
+        <g class="logo-bracket-right-group">
+          <path d="M76 40 L60 18 M76 40 L60 62" stroke="#00e5ff" stroke-width="5" fill="none" stroke-linecap="round" class="logo-bracket-right"/>
+        </g>
       </svg>
     </div>
 

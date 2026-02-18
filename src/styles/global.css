@@ -83,6 +83,27 @@
   to { opacity: 1; letter-spacing: 0.2em; }
 }
 
+@keyframes logo-crew-spin {
+  0% { transform: rotate(0deg) scale(1); }
+  30% { transform: rotate(25deg) scale(1.35); }
+  70% { transform: rotate(65deg) scale(1.35); }
+  100% { transform: rotate(90deg) scale(1); }
+}
+
+@keyframes logo-bracket-nudge-left {
+  0% { transform: translateX(0); }
+  30% { transform: translateX(-4px); }
+  70% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes logo-bracket-nudge-right {
+  0% { transform: translateX(0); }
+  30% { transform: translateX(4px); }
+  70% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
 @keyframes glass-gradient-shift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -125,13 +146,36 @@
   .logo-dot {
     animation: logo-dots 0.5s ease-out both;
   }
-  .logo-dot:nth-child(1) { animation-delay: 0.5s; }
-  .logo-dot:nth-child(2) { animation-delay: 0.6s; }
-  .logo-dot:nth-child(3) { animation-delay: 0.7s; }
-  .logo-dot:nth-child(4) { animation-delay: 0.8s; }
-  .logo-dot:nth-child(5) { animation-delay: 0.65s; }
+  .logo-crew .logo-dot:nth-child(1) { animation-delay: 0.5s; }
+  .logo-crew .logo-dot:nth-child(2) { animation-delay: 0.6s; }
+  .logo-crew .logo-dot:nth-child(3) { animation-delay: 0.7s; }
+  .logo-crew .logo-dot:nth-child(4) { animation-delay: 0.8s; }
+  .logo-center { animation-delay: 0.65s; }
   .logo-text-anim {
     animation: logo-text 1s ease-out 1s both;
+  }
+
+  /* Logo hover animation */
+  .logo-svg {
+    cursor: pointer;
+  }
+  .logo-svg .logo-crew {
+    transform-origin: 41px 40px;
+  }
+  .logo-svg:hover .logo-crew {
+    animation: logo-crew-spin 0.6s linear;
+  }
+  .logo-center {
+    transition: filter 0.3s ease;
+  }
+  .logo-svg:hover .logo-center {
+    filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.8));
+  }
+  .logo-svg:hover .logo-bracket-left-group {
+    animation: logo-bracket-nudge-left 0.6s linear;
+  }
+  .logo-svg:hover .logo-bracket-right-group {
+    animation: logo-bracket-nudge-right 0.6s linear;
   }
 
   /* Glassmorphism card */
