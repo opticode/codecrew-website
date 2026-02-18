@@ -18,6 +18,7 @@ export const services = [
     badge: 'Flagship Product',
     description:
       'Comprehensive Canadian retirement planning platform combining retirement simulation with dividend portfolio tracking. Purpose-built for Canadians aged 40–65 who want clarity on their financial future.',
+    url: 'https://pathtoretire.ca',
     longDescription: `Path to Retire is a comprehensive retirement planning platform designed exclusively for Canadians. It combines Monte Carlo retirement simulation with real-time dividend portfolio tracking, giving users a clear picture of their financial future across every province and territory.
 
 The platform handles the full complexity of Canadian retirement planning — RRSP and TFSA contribution room, CPP and OAS projections, provincial tax brackets, and pension income splitting. Users can model different retirement scenarios, adjust their assumptions, and see how changes ripple through their entire financial plan.

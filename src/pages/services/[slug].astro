@@ -44,10 +44,18 @@ const { service } = Astro.props;
         <p class="text-text-muted mb-6 font-heading text-[0.95rem]">
           Interested in this service?
         </p>
-        <a href="/#contact" class="btn-primary">
-          Get in Touch
-          <Icon name="lucide:arrow-right" class="w-4 h-4" />
-        </a>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="/#contact" class="btn-primary">
+            Get in Touch
+            <Icon name="lucide:arrow-right" class="w-4 h-4" />
+          </a>
+          {service.url && (
+            <a href={service.url} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              Visit {service.title}
+              <Icon name="lucide:external-link" class="w-4 h-4" />
+            </a>
+          )}
+        </div>
       </div>
     </div>
   </section>
